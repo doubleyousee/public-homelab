@@ -1,0 +1,52 @@
+name: Build Nexterm NTINDEX
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "snippets/**"
+      - "themes/**"
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate NTINDEX
+        run: |
+          {
+            echo "# Scripts"
+            if [ -d scripts ]; then
+              find scripts -type f -name "*.sh" | sort | while read -r f; do
+                echo "${f}@$(md5sum "$f" | awk '{print $1}')"
+              done
+            fi
+
+            echo ""
+            echo "# Snippets"
+            if [ -d snippets ]; then
+              find snippets -type f -name "*.snippet" | sort | while read -r f; do
+                echo "${f}@$(md5sum "$f" | awk '{print $1}')"
+              done
+            fi
+
+            echo ""
+            echo "# Themes"
+            if [ -d themes ]; then
+              find themes -type f -name "*.theme.css" | sort | while read -r f; do
+                echo "${f}@$(md5sum "$f" | awk '{print $1}')"
+              done
+            fi
+          } > NTINDEX
+
+      - name: Commit updated NTINDEX
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add NTINDEX
+          git diff --cached --quiet || (git commit -m "chore: update NTINDEX" && git push)
