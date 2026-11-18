@@ -1,0 +1,63 @@
+/* @name: McLaren Papaya Carbon */
+/* @description: Carbon fiber weave dark theme with McLaren Papaya (#FF8000) accents */
+
+:root[data-theme="dark"] {
+    --background: #101114;
+    --terminal: #0B0C0E;
+    --lighter-background: #17191E;
+    --dialog-background: rgba(16, 17, 20, 0.78);
+    --gray-full: #24272F;
+    --darker-gray: rgba(36, 39, 47, 0.75);
+    --dark-gray: rgba(242, 244, 247, 0.06);
+    --gray: rgba(242, 244, 247, 0.12);
+    --light-gray: #D1D5DB;
+    --primary: #FF8000;
+    --primary-opacity: rgba(255, 128, 0, 0.25);
+    --error: #EF4444;
+    --error-opacity: rgba(239, 68, 68, 0.25);
+    --success: #22C55E;
+    --success-opacity: rgba(34, 197, 94, 0.25);
+    --warning: #F59E0B;
+    --warning-opacity: rgba(245, 158, 11, 0.25);
+    --white: #F9FAFB;
+    --subtext: #9CA3AF;
+    --text: #F2F4F7;
+}
+
+:root[data-theme="oled"] {
+    --background: #08090B;
+    --terminal: #050507;
+    --lighter-background: #111216;
+    --dialog-background: rgba(8, 9, 11, 0.85);
+    --gray-full: #1C1F26;
+    --darker-gray: rgba(28, 31, 38, 0.75);
+    --dark-gray: rgba(242, 244, 247, 0.05);
+    --gray: rgba(242, 244, 247, 0.1);
+    --light-gray: #D1D5DB;
+    --primary: #FF8000;
+    --primary-opacity: rgba(255, 128, 0, 0.25);
+    --error: #EF4444;
+    --error-opacity: rgba(239, 68, 68, 0.25);
+    --success: #22C55E;
+    --success-opacity: rgba(34, 197, 94, 0.25);
+    --warning: #F59E0B;
+    --warning-opacity: rgba(245, 158, 11, 0.25);
+    --white: #F9FAFB;
+    --subtext: #9CA3AF;
+    --text: #F2F4F7;
+}
+
+/* Subtle diagonal carbon-fiber weave across app surfaces */
+:root[data-theme="dark"] body,
+:root[data-theme="oled"] body {
+    background-color: var(--background);
+    background-image:
+        linear-gradient(27deg, rgba(255, 255, 255, 0.025) 5px, transparent 5px),
+        linear-gradient(207deg, rgba(255, 255, 255, 0.025) 5px, transparent 5px),
+        linear-gradient(27deg, rgba(255, 255, 255, 0.04) 5px, transparent 5px),
+        linear-gradient(207deg, rgba(255, 255, 255, 0.04) 5px, transparent 5px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 10px, transparent 10px),
+        linear-gradient(rgba(255, 255, 255, 0.015) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.015) 50%, rgba(255, 255, 255, 0.015) 75%, transparent 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 0, 10px -10px, 0px 10px, 0 0, 0 0;
+}
