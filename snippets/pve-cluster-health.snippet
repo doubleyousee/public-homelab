@@ -1,0 +1,1 @@
+pveversion && echo "--- QUORUM ---" && pvecm status | grep -E "Quorate:|Nodes:|Expected votes:" && echo "--- STORAGE ---" && pvesm status && echo "--- ACTIVE GUESTS ---" && qm list | awk 'NR==1 || /running/' && pct list | awk 'NR==1 || /running/'

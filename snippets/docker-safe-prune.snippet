@@ -1,0 +1,1 @@
+docker system df && read -rp "Prune dangling images and build cache? [y/N]: " c && [[ "$c" =~ ^[Yy]$ ]] && docker image prune -f && docker builder prune -f

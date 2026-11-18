@@ -1,0 +1,1 @@
+mount | grep -E "nfs|cifs" || echo "No NFS/CIFS mounts active" && ps -eo pid,stat,comm,wchan | awk '$2 ~ /D/ {print "BLOCKED I/O:", $0}'

@@ -1,0 +1,1 @@
+echo "--- EXPORTED CERT ---" && openssl x509 -in /opt/docker/traefik/certs-export/export/home.thepedwells.ca.crt -noout -subject -dates && echo "--- LIVE TLS ENDPOINT ---" && echo | openssl s_client -servername ssh.home.thepedwells.ca -connect 127.0.0.1:443 2>/dev/null | openssl x509 -noout -subject -dates
