@@ -2,5 +2,17 @@
 scripts/safe-node-update.sh@ff8ac9f2edb5d3a57831dc685a0a227e
 
 # Snippets
+snippets/docker-health.snippet@053677277806f304b9150a9b7131c891
+snippets/docker-safe-prune.snippet@1862a9f4cffc1b3eb307d0917bfa3dbb
+snippets/komodo-git-sync-status.snippet@59d001272fc4687954267d4461782d7d
+snippets/pihole-status-and-flush.snippet@c823992fbeef4e70e052614ce0f63e08
+snippets/pihole-update-gravity.snippet@171c89d6a2fc04075e6d41e5f765e54c
+snippets/pve-cluster-health.snippet@6117871b890d97bdaf95fdbdddf9c112
+snippets/pve-safe-update.snippet@3161449bd4c91d4afdc12ecfa622c625
+snippets/traefik-cert-check.snippet@2d5028fbe8b8ffd6bb2236c59957f905
+snippets/traefik-logs-tail.snippet@02ce389b07dc9ff45b53288eb9da0033
+snippets/vm-cancel-reboot.snippet@9c8a635fc0667217bd3436398c719628
+snippets/vm-check-mounts.snippet@6f0b5c1c9e14824987bad85985507d4e
+snippets/vm-fleet-status.snippet@f2398c7a90fb784e8f386b1c24016275
 
 # Themes
